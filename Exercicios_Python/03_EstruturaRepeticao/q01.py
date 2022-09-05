@@ -1,34 +1,32 @@
 # Faça um programa que peça uma nota, entre zero e dez.
 # Mostre uma mensagem caso o valor seja inválido e
-# continue pedindo até (enquanto) que o usuário informe um valor válido.
+# continue pedindo até que o usuário informe um valor válido.
 # enquanto -> while
 
-valido = 'sim'
-while valido == 'sim': # condição
-    # repetir o código dentro do contexto enquanto a condição for verdadeira
+nota = int(input('Nota: '))
+if nota >= 0 and nota <= 10:
+    print('valor válido')
+else:
+    while not(nota >= 0 and nota <= 10):
+        print('valor inválido')
+        nota = int(input('Nota: '))
+print('válido')
+
+'''
+nota = int(input('Nota: '))
+while not(nota >= 0 and nota <= 10):
+    print('inválido')
     nota = int(input('Nota: '))
-    if 0 <= nota and nota <= 10:
+
+print('válido!')
+'''
+
+'''
+nota = -1 # valor inválido para começar entrando no loop
+while not(nota >= 0 and nota <= 10):
+    nota = int(input('Nota: '))
+    if nota >= 0 and nota <= 10:
         print('Nota válida!')
-        valido = 'sim'
     else:
         print('Nota inválida!')
-        valido = 'nao'
-
-print('Fim do programa')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'''
