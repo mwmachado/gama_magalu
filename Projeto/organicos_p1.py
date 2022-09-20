@@ -6,7 +6,28 @@ To Do (Tarefas a fazer)
 - [] Melhorar os relatórios
 '''
 
+#Setup
 import os
+
+
+#Funções
+def menu(menu):
+    os.system('clear')
+    print(menu)
+
+def cadastrar_produtos(produtos):
+    chave = input('Nome do produto: ')
+    while len(chave) == 0:
+        print('Valor inválido!')
+        chave = input('Nome do produto: ')
+
+    valor = input('Valor do produto: ')
+    while not valor.replace('.', '', 1).isdigit(): #.replace(',', '.')
+        print('Valor inválido!')
+        valor = input('Valor do produto: ')
+    
+    produtos[chave] = valor
+    print('Produto Cadastrado!')
 
 # Boas Vindas
 boas_vindas = '''
@@ -16,7 +37,7 @@ Bem vindo(a) ao Organico's
 '''
 
 # Menu
-menu = '''
+principal = '''
 =======================
        Navegação
 1. Cadastro
@@ -68,14 +89,13 @@ opcoes_relatorio = '0123'
 relatorio = [] # [{produto: quantidade},...]
 
 # Tela de Boas-vindas
-print(boas_vindas)
+menu(boas_vindas)
 input('Aperte Enter para Continuar')
 
 # Menu de Navegação
 opcao = 1 # inicializando a variável para entrar no loop
 while opcao != '0':
-    os.system('clear')
-    print(menu)
+    menu(principal)
     opcao = input('Opção: ')
     if opcao not in opcoes_menu:
         print('Opção inválida!')
@@ -84,26 +104,13 @@ while opcao != '0':
         # Menu Cadastro
         if opcao == '1':
             while opcao != '0':
-                os.system('clear')
-                print(menu_cadastro)
+                menu(menu_cadastro)
                 opcao = input('Opção: ')
                 if opcao not in opcoes_menu:
                     print('Opção inválida!')
                 else:
                     if opcao == '1':
-                        # cadastrar produtos
-                        chave = input('Nome do produto: ')
-                        while len(chave) == 0:
-                            print('Valor inválido!')
-                            chave = input('Nome do produto: ')
-
-                        valor = input('Valor do produto: ')
-                        while not valor.replace('.', '', 1).isdigit(): #.replace(',', '.')
-                            print('Valor inválido!')
-                            valor = input('Valor do produto: ')
-                        
-                        produtos[chave] = valor
-                        print('Produto Cadastrado!')
+                        cadastrar_produtos(produtos)
                     elif opcao == '2': # listar produtos
                         print()
                         print(f'|{"Produto":10s}|{"Preço":>10s}|')
@@ -131,8 +138,7 @@ while opcao != '0':
             opcao = 1 # resetar variável opcao
         elif opcao == '2':
             while opcao != '0':
-                os.system('clear')
-                print(menu_vendas)
+                menu(menu_vendas)
                 opcao = input('Opção: ')
                 if opcao not in opcoes_vendas:
                     print('Opção inválida!')
@@ -217,8 +223,7 @@ while opcao != '0':
             opcao = 1 # resetar variável opcao
         elif opcao == '3':
             while opcao != '0':
-                os.system('clear')
-                print(menu_relatorio)
+                menu(menu_relatorio)
                 opcao = input('Opção: ')
                 if opcao not in opcoes_menu:
                     print('Opção inválida!')
