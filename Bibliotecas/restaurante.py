@@ -1,5 +1,6 @@
 #import receitas
-from receitas import fritar_ovo, fazer_miojo
+#from receitas import fritar_ovo, fazer_miojo
+from receitas import *
 #import receitas.brasileiras
 from receitas.brasileiras import feijoada
 #import receitas.asiaticas
