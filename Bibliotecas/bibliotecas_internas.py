@@ -52,3 +52,5 @@ for i in sample(lista, 10):
     print(i)
     sleep(1)
 print('Feliz Ano Novo!!!')
+
+
