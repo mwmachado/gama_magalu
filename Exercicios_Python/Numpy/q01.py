@@ -15,5 +15,3 @@ array[2:4, 2:4] = 2 #np.full([2,2], 2)
 array2 = np.random.randint(low=0, high=3, size=[6,6])
 array3 = array - array2
 print(array3)
-
-##%
