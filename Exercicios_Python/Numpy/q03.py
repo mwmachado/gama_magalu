@@ -22,7 +22,6 @@ import numpy as np
 # 4 semanas * 7 dias = 28 1-28
 dias = np.arange(start=1, stop=29, dtype=object)#.reshape([1, 4, 7]) #str->object
 mes = dias.reshape([1, 4, 7])
-mes.shape
 calendario = np.repeat(mes, 12, axis=0)
 calendario
 
@@ -32,15 +31,18 @@ calendario[:, :, [0, -1]] = 'W'
 calendario
 
 # %% Marcação do primeiro dia do mês
+#[mes, semana, dia]
 calendario[:, 0, 0] = 'S'
 calendario
 
 # %% Marcação do último dia do mês
+#[mes, semana, dia]
 calendario[:, -1, -1] = 'E'
 calendario
 
 # %% Marcação dos demais dias
 #~np.isin(calendario, ['W', 'S', 'E'])
+#[mes, semana, dia]
 calendario[:, :, 1:-1] = 'D'
 calendario
 

@@ -1,6 +1,6 @@
 '''
 1. Utilizando a biblioteca numpy siga as instruções abaixo:
-    1. Crie um array 6x6 preenchido com zero
+    1. Crie um array 6x6 preenchido com zeros
     2. Preencha o centro desse array com um array 4x4 preenchido com uns
     3. Preencha o centro desse array com um array 2x2 preenchido com dois
     4. Gere um segundo array 6x6 com números inteiros aleatórios entre 0 e 2.

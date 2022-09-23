@@ -1,4 +1,4 @@
-# 2. Crie um array de duas dimensões, no formato 9x9, com números de 0 a 79 ordenados de modo crescente e selecione:
+# 2. Crie um array de duas dimensões, no formato 9x9, com números de 0 a 80 ordenados de modo crescente e selecione:
 #    1. Os números ímpares
 #    2. Os números pares
 #    3. Os múltiplos de sete
@@ -20,7 +20,7 @@ print(array[impares])
 
 # Item 2
 # np.invert(impares) not impar
-pares = array%2 == 0 #máscara de números impares
+pares = array%2 == 0 #máscara de números pares
 print()
 print('2. Os números pares:')
 print(array[pares])

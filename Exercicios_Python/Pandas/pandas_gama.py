@@ -74,14 +74,53 @@ df['ingredientes']
 df['quantidades']
 
 # %% Criação de coluna com apenas um valor
+#df['medidas'] = ['g','g','g','g','g','g']
 df['medidas'] = 'g'
+df
+
+#%%
+def aumentar_estoque(dataframe, item, quantidade):
+    mask_item = df['ingredientes'] == item
+    dataframe.loc[mask_item, 'quantidades'] = dataframe.loc[mask_item, 'quantidades'] + quantidade
+
+def diminuir_estoque(dataframe, item, quantidade):
+    mask_item = df['ingredientes'] == item
+    dataframe.loc[mask_item, 'quantidades'] = dataframe.loc[mask_item, 'quantidades'] - quantidade
+
+
+# %%
+aumentar_estoque(df, 'manteiga', 300)
+df
+
+#%%
+diminuir_estoque(df, 'maisena', 289)
+df
+
+# %%
+diminuir_estoque(df, 'manteiga', 216)
+df
+
+
+# %%
+menos_farinha = df['ingredientes'] != 'farinha'
+menos_farinha
+df.loc[menos_farinha, 'quantidades'] = df.loc[menos_farinha, 'quantidades'] * 1.2
+df['ingredientes'] * 2
+
+#%%
+# linha, coluna
+maisena = df['ingredientes'] == 'maisena'
+df.loc[maisena, 'quantidades']
+
+# %%
+df.loc[maisena, 'quantidades'] = df.loc[maisena, 'quantidades'] + 1
 df
 
 # %% Seleção de célula e atribução de valor
 # [linhas, colunas]
 # .loc => localização nome
 # .iloc => localização posição
-#df['medidas'][3] = 'unidades'
+#df['medidas'][3] = 'unidades' # má prática
 #df.iloc[3, 2] = 'unidades'
 df.loc[3, 'medidas'] = 'unidades'
 df
@@ -112,6 +151,9 @@ df.sample(frac=0.30)
 # %% Estatísticas do DataFrame
 df.describe()
 
+# %%
+df['ingredientes'].describe()['top']
+
 # %% Ordenação dos valores ou index
 #df.sort_values('ingredientes')
 #df.sort_values('ingredientes', ascending = False)
@@ -124,6 +166,8 @@ df.sort_index(ascending=False)
 # - or  |
 # - in isin
 
+#%%
+df
 # %% Filtros concatenados
 geladeira = [
     'ovos',
@@ -131,11 +175,20 @@ geladeira = [
     'maisena'
 ]
 
-maior_200 = df['quantidades'] > 200
-tem_na_geladeira = df['ingredientes'].isin(['ovos', 'açucar', 'maisena'])
-filtro = ~tem_na_geladeira & maior_200
+maior_260 = df['quantidades'] > 260
+tem_na_geladeira = df['ingredientes'].isin(geladeira)
+filtro = ~tem_na_geladeira & maior_260
+
 df[filtro]
 
+# df[geladeira]
+# df[~geladeira]
+# df[maior_260]
+# df[~maior_260]
+# df[geladeira & maior_260]
+# df[geladeira & ~maior_260]
+# df[~geladeira & maior_260]
+# df[~(geladeira & maior_260)]
 # %% Funções comuns
 #max(df['quantidades'])
 #df['quantidades'].max()
@@ -147,6 +200,9 @@ df[filtro]
 # %% Iteração sobre o dataframe
 for ingrediente in df['ingredientes']:
     print(ingrediente)
+
+#%%
+df.set_index('ingredientes')['quantidades'].plot.pie()
 
 # %% Salvar DataFrame em arquivo CSV
 df.to_csv('biscoitos.csv', index=False)
