@@ -4,8 +4,8 @@ Exercícios HTML
 1. [x] Crie um site com o link para 10 dos seus sites preferidos.
 1. [x] Crie uma redação com título e 4 parágrafos (utilize lorem ipsum para o conteúdo)
 1. [x] Crie uma galeria com 5 fotos baixadas da internet. Ajuste a galeria para redirecionar o usuário para o site daquela imagem.
-1. [ ] Crie um livro e um sumário para acessar rápidamente cada um dos 10 capítulos
-1. Altere o exercício anterior e faça uma página html para cada capítulo e uma para o sumário utilizando listas.
+1. [x] Crie um livro e um sumário para acessar rápidamente cada um dos 10 capítulos
+1. [x] Altere o exercício anterior e faça uma página html para cada capítulo e uma para o sumário utilizando listas.
 1. Transforme um csv em uma tabela (usando apenas html e table)
 1. Crie uma tabela de jogos da copa (min. 10 jogos)
 1. Crie uma lista de tarefas utilizando checkbox
