@@ -1,0 +1,244 @@
+Contexto
+- Estrutura Cliente Servidor
+    - 3 modos
+
+
+Introdução
+- HTML significa Hyper Text Markup Language (tradução livre: linguagem de marcação de hipertexto)
+- Linguagem de marcação padrão para a criação de páginas web
+- Define a estrutura de uma página web
+- Utiliza elementos/tags web
+- arquivos html utilizam as extensões .htm ou .html
+Navegadores web
+- Navegadores web são programas utilizados para renderizar páginas web
+- ex. Chrome, Edge, Firefox, etc.
+- O navegador utiliza os elementos web para formatar o conteúdo na tela.
+Elementos web
+- Elementos web são definidos por uma tag de início e uma de fim (há algumas exceções).
+`<nome da tag> conteúdo </nome da tag>`
+- Elementos que não tem conteúdo (empty tags/element) não possuim tag de fim
+`<tag sem conteúdo>`
+- Elementos html podem conter outros elementos.
+`<tag extena> <tag interna> conteúdo </tag interna> </tag externa>`
+- Alguns elementos web podem funcionar mesmo sem uma tag de fim, porém isso não é uma boa prática e onde levar a erros.
+- Elementos HTML não são case sensitive, ou seja, tanto faz utilizar maíusculo ou minúsculo.
+- No entanto é recomendado o uso de tags em minúsculo.
+Atributos
+- Alguns elementos HTML podem utilizar de atributos
+- Atributos proveem informações adicionais aos elemetos
+- São sempre especificados nas tags de início
+- Geralmente vem em formato chave="valor"
+- Atributos de elementos HTML não requerem aspas na especificação dos valores
+- No entanto é recomendado o uso de aspas nos valores de atributos html, principalmente pela possibilidade de utilizar espaço nos nomes
+- similar ao que acontece com python, aspas simples também podem ser utilizadas
+`<tag attributo>`
+`<tag attributo="valor">`
+`<tag attributo="valor com espaço">`
+`<tag attributo='valor com "aspas duplas"'>`
+    
+
+
+Tags
+Tags principais
+<!DOCTYPE html> - indica para o navegador que o documento é do tipo html5
+<html></html> - tag principal/raiz
+    lang -> linguagem da página (pt-BR)
+<head></head> - cabeça do html, contém mata informação sobre a página
+<body></body> - corpo do html, contém os elementos visíveis
+<!--comentario--> - comentários
+
+Tags de estrutura
+<header></header> - cabeçalho
+<nav></nav> - menu de navegação
+<aside></aside> - conteúdo lateral
+<footer></footer> - rodapé
+<div></div> - divisão
+<section></section> - seção do documento
+<span></span> - seção do documento
+
+Tags de cabeça (head)
+<title></title> - título da página
+<link rel="" href=""> - referencia outros arquivos
+    rel -> especifica a relação do arquivo com a página
+    href -> caminho do arquivo
+<link rel="stylesheet" href=""> - referencia o arquivo de estilos
+    href -> caminho do arquivo
+<link rel="icon" href=""> - referencia o ícone da página
+<meta> - metadado do documento html
+    charset -> encode
+    name -> chave
+    content -> valor
+
+Tags de corpo (body)
+<h1></h1> - Títulos 1
+<h2></h2> - Títulos 2
+<h3></h3> - Títulos 3
+<h4></h4> - Títulos 4
+<h5></h5> - Títulos 5
+<h6></h6> - Títulos 6
+<p></p> - parágrafros
+<a></a> - links para sites, arquivos ou títulos
+    href -> link de referência
+<img> - imagem, 
+    src -> source, link do arquivo
+    alt -> alternative text, texto alternativo caso a imagem não seja renderizada
+    width -> largura
+    height -> altura
+<br> - quebra de linha
+<wbr> - possível quebra de linha
+<b></b> - negrito
+<strong></strong> - texto com ênfase (negrito)
+<em></em> - itálico
+<mark></mark> - grifado
+<s></s> - riscado
+<blockquote></blockquote> - Citações de outras fontes
+<code></code> - pedaços de código
+<sup></sup> - escrita elevada
+<sub></sub> - escrita inferior
+<button></button> - botão clicável
+<li></li> - item de listas
+<ol></ol> - lista ordenada
+<ul></ul> - lista não-ordenada
+
+Tags de Media
+(permite especificar multiplos arquivos auxiliando na compatibilidade)
+<picture></picture> - imagem
+<audio></audio> - arquivo de áudio
+    src -> caminho do arquivo
+    controls -> indicador de controlador
+<video></video> - arquivo de vídeo
+    src -> caminho do arquivo
+    width -> largura
+    height -> altura
+    controls -> indicador de controlador
+<source> - auxilia na especificação de mais de um arquivo para as tags de mídia (audio, video, picture)
+
+Tags de Tabela
+<table></table> - Tabela
+<thead></thead> - cabeçalho da tabela
+<tbody></tbody> - corpo da tabella
+<tfoot></tfoot> - rodapé da tabela
+<th></th> - nome de coluna em uma tabela
+<tr></tr> - linha de uma tabela
+<td></td> - célula em uma tabela
+
+Tags de formulário
+<form></form> - formulário para preechimento de informações pelo usuário
+    action -> ação iniciada ao enviar com submit
+    id -> id do formulário
+<input> - item de um formulário
+type -> tipo do input
+<input type="radio"> - multipla escolha
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    value -> valor correspondente
+<input type="checkbox"> - caixa de seleção
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    value -> valor correspondente
+<input type="submit"> - botão de envio do formulário
+    value -> escrita do botão
+<input type="color"> - seletor de cor
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    value -> valor padrão
+<input type="date"> - seletor de data
+    id -> nome único
+    name -> parametro que vai guardar o valor
+<input type="time"> - seletor de hora
+    id -> nome único
+    name -> parametro que vai guardar o valor
+<input type="datetime-local"> - seletor de data e hora
+    id -> nome único
+    name -> parametro que vai guardar o valor
+<input type="email"> - campo de email
+    id -> nome único
+    name -> parametro que vai guardar o valor
+<input type="file"> - seletor de arquivo
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    multiple -> permite seleção de multiplos arquivos
+<input type="number"> - campo de número com restrições
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    max - valor máximo
+    min - valor mínimo
+    step - passo
+    value - valor padrão
+<input type="range"> - slider (quando o valor exato não é importante)
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    max - valor máximo
+    min - valor mínimo
+    step - passo
+    value - valor padrão
+<input type="password"> - campo de password
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    minlength -> tamanho mínimo
+<input type="search"> - caixa de pesquisa
+    id -> nome único
+    name -> parametro que vai guardar o valor (geralmente "q")
+<input type="tel"> - número de telefone
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    pattern -> regex para validação
+    placeholder -> exemplo
+    required -> indica que o campo é de preenchimento obrigatório
+<input type="text"> - entrada de texto
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    width -> tamanho máximo (padrão é 20)
+<input type="url"> - campo de url
+    id -> nome único
+    name -> parametro que vai guardar o valor
+<input type="week">
+<label></label> - título para um elemento input
+    for -> id do input
+    form -> id do formulário
+<select></select> - lista de menu de drop down
+    name -> nome do elemento
+    id -> id do elemeto
+<option></option> - opção em um menu de drop down
+    value -> valor correspondente
+<optgroup></optgroup> - grupo de opções de um menu de dropdown
+    label -> nome do grupo
+<textarea></textarea> - caixa de texto
+    id -> nome único
+    name -> parametro que vai guardar o valor
+    cols -> largura
+    rows -> altura
+<button></button> - botão clicável
+<fieldset></fieldset> - conjunto de elementos de um formulário
+    form -> id do formulário
+<legend></legend> - legenda para elemento fieldset
+
+Outras Tags
+<script></script> - código javascript a ser renderizado do lado do cliente
+<style></style> - código css a ser renderizado do lado do cliente
+<meter></meter> - barra de carregamento
+    id -> id do elemeto
+    value -> valor de preenchimento (porcentagem)
+<progress></progress> - barra de progresso
+    id -> id do elemeto
+    value -> valor de preenchimento
+    max -> valor máximo
+
+
+comandos úteis
+f12
+ctrl+u
+right click, "View Page Source"
+right click, "Inspect" ou "Inspect Element"
+
+Referência
+- https://www.w3schools.com/html
+- https://www.favicon.cc
+
+Pesquisar
+- div vs section vs span
+- br vs wbr
+- picture vs image
+
+Próximos tópicos
+- responsividade
