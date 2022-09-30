@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produto</title>
+</head>
+<body>
+    <form action="/cadastro" method="get">
+        <fieldset>
+            <legend>Cadastro Produto</legend>
+            <label for="campo1">Nome: </label>
+            <input type="text" name="produto" id="campo1" required placeholder="Digite o nome do produto">
+            <br>
+            <br>
+            <label for="campo2">Preço: R$</label>
+            <input type="number" step="0.05" min="0" max="100" name="preco" id="campo2" required
+            >
+            <br>
+            <br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+</body>
+</html>
