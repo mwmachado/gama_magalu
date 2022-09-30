@@ -1,0 +1,15 @@
+body{
+    /*background-color: black;*/
+    /*background-image: url("../_img/background_blue.jpg");*/
+    /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfJjMTDEGVj9_FhluPaqYuEkZE9JEqajp8r7aIV4-4C5UKh2oINVtzr1KX__VIRdOf1sM&usqp=CAU");*/
+    background-image: url(https://ak.picdn.net/shutterstock/videos/2954131/thumb/1.jpg?ip=x480);
+    background-repeat: repeat-y;
+    background-size: cover;
+    /*
+    background-image: url(../../_img/lerolero.jpeg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: top;
+    background-attachment: fixed;
+    */
+}

@@ -1,0 +1,15 @@
+/*comentários*/
+a {
+    text-decoration: none;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBpSDvOqQRRA03W3_SVerhqSx1OmSThyZH8KRIn2z-BTlrcjLukk5jLU0u72U-IeKskO4&usqp=CAU");
+    background-size: cover;
+    padding: 5px;
+    /* border: 1px black solid;
+    border-radius: 10px; */
+    margin: 10px;
+    display:inline-block;
+    color: white;
+}
+img {
+    display: block;
+}

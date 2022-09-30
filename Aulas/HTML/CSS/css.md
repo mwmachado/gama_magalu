@@ -104,6 +104,8 @@ Tipos de inclusão de CSS
 - Falar sobre herança
 
 # Background
+
+```
 background-color: Define uma cor como fundo
 background-image: Define a imagem de fundo
     - url("caminho_da_imagem")
@@ -116,57 +118,16 @@ background-attachment: Define se a imagem vai seguir a rolagem da página ou nã
     - Não segue a rolagem -> scroll
 background-position:
     - right, top, left, bottom
-
-# Texto
-color:
-    - RGB -> rgb(0-255, 0-255, 0-255, 0-1)
-    - Hexadecimal -> #ffffff
-    - Pré-definidas -> https://www.w3schools.com/colors/colors_names.asp
-opacity: 0-1
-text-align: right, left, center, justify
-font-family: nome_da_fonte
-font-size: tamanho
-
-# Links
-/* essa ordem tem que ser respeitada */
-a:link -> link não visitado, padrão
-a:visited -> link visitado
-a:hover -> quando o mouse passa por cima
-a:active -> no momento do clique
-color: cor
-background-color: cor
-text-decoration: none, underline
-padding:
-text-align:
-
-# box Model
-height: tamanho ou porcentagem
-width: tamanho ou porcentagem
-padding: tamanho ou porcentagemfont-size:
-border: https://www.w3schools.com/css/css_border.asp
-border-style: top, right, bottom, left
-border-width: px, cm, thin, medium, thick
-border-color:
-border-radius: xp
-margin: tamanho ou auto(centraliza o container horizontalmente)
-max-width: tamanho ou porcentagem
-
-# Listas
-list-style-type:
-    - ol -> upper-roman, lower-alpha, none
-    - ul -> circle, square, none
-list-style-image: url('caminho_do_ícone')
-list-style-position: inside, outside
-
-# Tabelas
-border:
-width:
-height:
-text-align:
-vertical-align: top, bottom, middle
-padding:
+```
 
 # Display
+
+```
+display: block, inline, inline-block, none
+    - block: um bloco em baixo do outro
+    - inline: um do lado do outro, ocupa apenas o espaço necessário
+    - inline-block: um do lado do outro, porém permite especificar altura e largura
+    - none: Geralmente utilizado por funções javascript para remover ou mostrar elementos na tela.
 position: static, relative, fixed, absolute, sticky
     - static: posicionamento padrão
     - relative: posicionamento relativo a posição padrão
@@ -179,11 +140,6 @@ float: left, right, none, inherit
     - right: se posiciona na esquerda do container
     - none: comportamento padrão
     - inherit: herda o valor do parent
-display: block, inline, inline-block, none
-    - block: um embaixo do outro
-    - inline: um do lado do outro, ocupa apenas o espaço necessário
-    - inline-block: um do lado do outro, porém permite especificar altura e largura
-    - none: Geralmente utilizado por funções javascript para remover ou mostrar elementos na tela.
 visibility: hidden, visible
 overflow: visible, hidden, scroll, auto
     - visible: renderiza para fora do elemento
@@ -194,6 +150,71 @@ overflow: visible, hidden, scroll, auto
 - display none vs visibility hidden
 - float left vs display inline-block
   - display: tem sua altura alterada pelos irmãos
+```
+
+# Texto
+
+```
+color:
+    - RGB -> rgb(0-255, 0-255, 0-255, 0-1)
+    - Hexadecimal -> #ffffff
+    - Pré-definidas -> https://www.w3schools.com/colors/colors_names.asp
+opacity: 0-1
+text-align: right, left, center, justify
+font-family: nome_da_fonte
+font-size: tamanho
+```
+
+# Links
+
+```
+/* essa ordem tem que ser respeitada */
+a:link -> link não visitado, padrão
+a:visited -> link visitado
+a:hover -> quando o mouse passa por cima
+a:active -> no momento do clique
+color: cor
+background-color: cor
+text-decoration: none, underline
+padding:
+text-align:
+```
+
+# box Model
+
+```
+height: tamanho ou porcentagem
+width: tamanho ou porcentagem
+padding: tamanho ou porcentagemfont-size:
+border: https://www.w3schools.com/css/css_border.asp
+border-style: top, right, bottom, left
+border-width: px, cm, thin, medium, thick
+border-color:
+border-radius: xp
+margin: tamanho ou auto(centraliza o container horizontalmente)
+max-width: tamanho ou porcentagem
+```
+
+# Listas
+
+```
+list-style-type:
+    - ol -> upper-roman, lower-alpha, none
+    - ul -> circle, square, none
+list-style-image: url('caminho_do_ícone')
+list-style-position: inside, outside
+```
+
+# Tabelas
+
+```
+border:
+width:
+height:
+text-align:
+vertical-align: top, bottom, middle
+padding:
+```
 
 Referência
 ---

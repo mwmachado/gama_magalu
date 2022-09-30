@@ -1,0 +1,33 @@
+*{
+    border: 1px solid red;
+
+}
+
+body {
+    width: 90%;
+    margin: auto;
+}
+
+/* ids */
+#p1 {
+    text-align: justify;
+}
+#p2 {
+    text-align: center;
+}
+#p3 {
+    text-align: left;
+}
+#p4 {
+    text-align: right;
+}
+
+/* classes */
+.esquerda{
+    text-align: left;
+}
+.direita{
+    text-align: right;
+}
+
+

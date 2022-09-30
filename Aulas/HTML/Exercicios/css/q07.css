@@ -1,0 +1,22 @@
+
+table, th, td{
+    border-bottom: 1px solid gray;
+}
+table{
+    border-collapse:collapse;
+    background-color: #eee;
+    border: 1px solid gray;
+}
+thead{
+    padding: 0px 10px;
+    background-color: aquamarine;
+}
+td:hover{
+    background-color: gray;
+}
+tr:hover{
+    background-color: blue;
+}
+tr:active{
+    background-color: red;
+}

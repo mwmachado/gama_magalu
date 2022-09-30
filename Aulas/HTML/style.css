@@ -1,7 +1,12 @@
 /*comentários*/
-html {
+#link1{
     color: red;
-}
-a{
-    color: red;
+    text-decoration: none;
+    background-color: aquamarine;
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    display:inline-block;
+    color: gray;
 }
