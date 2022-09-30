@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario" action="/request" method="GET">
+        <h1>Formulário</h1>
+        <fieldset>
+            <legend>Login</legend>
+            <div>
+                <label for="nome">Nome:</label>
+                <input id="nome" name="nome_variavel" placeholder="Insira seu nome">
+            </div>
+            <br>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha_variavel" placeholder="Insira uma senha de 8 dígitos" minlength="8">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Cadastro</legend>
+            <div>
+                <input type="radio" id="radio_a" name="opcao" value="dados">
+                <label for="radio_a">analista</label>
+
+                <input type="radio" id="radio_b" name="opcao" value="desenvolvimento">
+                <label for="radio_b">frontend</label>
+                
+                <input type="radio" id="radio_c" name="opcao" value="desenvolvimeto">
+                <label for="radio_c">backend</label>
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" id="checkbox_a" name="filhos" value="true">
+                <label for="checkbox_a">tem filhos</label>
+
+                <input type="checkbox" id="checkbox_b" name="cachorro" value="true">
+                <label for="checkbox_b">tem cachorro</label>
+                
+                <input type="checkbox" id="checkbox_c" name="gato" value="true">
+                <label for="checkbox_c">tem gato</label>
+            </div>
+            <br>
+            <div>
+                <label for="color">Cor preferida?</label>
+                <input type="color" value="#ffffff" id="color" name="cor_preferida">
+            </div>
+            <br>
+            <div>
+                <label for="nascimento">Data de nascimento</label>
+                <input type="date" id="nascimento" name="nascimento">
+            </div>
+            <br>
+            <div>
+                <label for="nascimento">Hora do nascimento</label>
+                <input type="time" id="h_nascimento" name="h_nascimento">
+            </div>
+            <br>
+            <div>
+                <label for="dh_nascimento">Data e Hora do nascimento</label>
+                <input type="datetime-local" id="dh_nascimento" name="dh_nascimento">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email para contato</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <br>
+            <div>
+                <label for="telefone">Telefone para contato</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+            <br>
+            <div>
+                <label for="file">Anexe seu CV</label>
+                <input type="file" id="file" name="file">
+            </div>
+            <br>
+            <div>
+                <label for="number">Idade</label>
+                <input type="number" id="number" name="number" min="18" max="80" value="20">
+            </div>
+            <br>
+            <div>
+                <label for="volume">Volume</label>
+                <input type="range" id="volume" min="0" max="10" step="2">
+            </div>
+            <br>
+            <div>
+                <label for="search">Pesquisa</label>
+                <input type="search" id="search" name="q">
+            </div>
+            <br>
+            <div>
+                <label for="cargo">Cargo</label>
+                <select name="cargo" id="cargo">
+                    <option value="gestor">Gestor</option>
+                    <optgroup label="Desenvolvimento">
+                        <option value="frontend">Front-end</option>
+                        <option value="backend">Back-end</option>
+                    </optgroup>
+                    <optgroup label="Dados">
+                        <option value="analista">Analista</option>
+                    </optgroup>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="text">Assunto</label>
+                <input type="text" id="text" name="text">
+            </div>
+            <br>
+            <div>
+                <label for="text">Reclamações</label>
+                <br>
+                <textarea cols="20" rows="5"></textarea> 
+            </div>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
