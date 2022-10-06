@@ -1,5 +1,4 @@
 #!pip install flask
-from fileinput import filename
 from flask import Flask # importar a classe Flask
 from flask import render_template
 from flask import redirect
