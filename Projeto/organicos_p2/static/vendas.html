@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Organicos - Vendas</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/static/index.html">Menu</a></li>
+        <li><a href="/static/cadastro.html">Cadastro</a></li>
+        <li><a href="/static/vendas.html">Vendas</a></li>
+        <li><a href="/static/relatorio.html">Relatório</a></li>
+    </ul>
+    <a href="/carrinho"><button>Ver Carrinho</button></a>
+    <ul>
+        <li>
+            <form action="/adicionar" method="get">
+                <img src="" alt="">
+                <p>Produto 1</p>
+                <p>R$10,00</p>
+                <input type="hidden" name="produto" value="Produto 1">
+                <input type="hidden" name="valor" value="10">
+                <input type="number" name="quantidade" min="0" max="10">
+                <br>
+                <button type="submit">adicionar ao carrinho</button>
+            </form>
+        </li>
+        <li>
+            <form action="/adicionar" method="get">
+                <img src="" alt="">
+                <p>Produto 2</p>
+                <p>R$20,00</p>
+                <input type="hidden" name="produto" value="Produto 2">
+                <input type="hidden" name="valor" value="20">
+                <input type="number" name="quantidade" min="0" max="10">
+                <br>
+                <button type="submit">adicionar ao carrinho</button>
+            </form>
+        </li>
+        <li>
+            <form action="/adicionar" method="get">
+                <img src="" alt="">
+                <p>Produto 3</p>
+                <p>R$30,00</p>
+                <input type="hidden" name="produto" value="Produto 3">
+                <input type="hidden" name="valor" value="30">
+                <input type="number" name="quantidade" min="0" max="10">
+                <br>
+                <button type="submit">adicionar ao carrinho</button>
+            </form>
+        </li>
+    </ul>
+</body>
+
+</html>

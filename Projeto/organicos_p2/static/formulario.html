@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Organicos - Cadastrar Produto</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/static/index.html">Menu</a></li>
+        <li><a href="/static/cadastro.html">Cadastro</a></li>
+        <li><a href="/static/vendas.html">Vendas</a></li>
+        <li><a href="/static/relatorio.html">Relatório</a></li>
+    </ul>
+    <form action="/cadastrar" method="get">
+        <fieldset>
+            <legend>Cadastrar Novo Produto</legend>
+            <label for="produto">Produto: </label>
+            <input type="text" id="produto" name="produto" required>
+            <br>
+            <label for="valor">Valor: </label>
+            <input type="number" id="valor" name="valor" min="0" step=".01" required>
+            <br>
+            <label for="quantidade">Quantidade: </label>
+            <input type="number" id="quantidade" name="quantidade" min="0" required>
+            <br>
+            <input type="submit" value="Cadastrar">
+        </fieldset>
+    </form>
+</body>
+</html>
