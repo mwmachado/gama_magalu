@@ -34,7 +34,5 @@
     1. \+ Connect
     1. x Close
 
-
-
 # Referencia
 <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04>
