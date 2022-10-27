@@ -12,7 +12,7 @@
     1. `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';`
     1. exit
 1. mysql -u root -p
-    1. <password>
+    1. `<password>`
     1. exit
 1. sudo mysqsl_secure_installation
     1. Change the password for root? n
