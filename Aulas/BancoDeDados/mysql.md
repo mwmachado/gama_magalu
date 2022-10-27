@@ -14,7 +14,7 @@
 1. mysql -u root -p
     1. `<password>`
     1. exit
-1. sudo mysqsl_secure_installation
+1. sudo mysql_secure_installation
     1. Change the password for root? n
     1. Remove anonymous users? y
     1. Disallow root login remotely? y
