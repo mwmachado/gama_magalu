@@ -30,15 +30,8 @@ Exercícios CSS e Responsividade
     - adicione uma background de cor diferente quando o usuário clicar na linha.
 
 Exercícios Flask
-1. [ ] Crie uma aplicação flask
+1. [x] Crie uma aplicação flask
 1. [ ] Crie uma aplicação de lista de tarefas
 1. [ ] Transforme um csv em uma tabela (usando pandas, flask, e jinja)
 1. [ ] Crie um site que o usuário jogue um dado e mostre a face do dado
 1. [ ] Crie um formulário de adoção de animais e salve o resultado em um arquivo csv
-
-# Flask
-- básico
-- rotas
-- renderizar páginas html
-- formulário
-- Jinja (if, for)

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja</title>
+</head>
+<body>
+    <ul>
+    <li style="font-size:30px;"><b>{{dataframe.columns|join(',')}}</b></li>
+    {%for index, linha in dataframe.iterrows()%}
+        <li>{{linha.aluno}}, {{linha.nota}}</li>
+    {%else%}
+        <li>Não há notas cadastradas!</li>
+    {%endfor%}
+    </ul>
+</body>
+</html>
