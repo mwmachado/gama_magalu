@@ -22,7 +22,7 @@
     1. Reload privilege tables now? y
 
 # Acesso
-1. instalar extensão do vscode `vscode-database-client`
+1. instalar extensão do vscode `Database Client`
 1. menu database
 1. "+" -> Add Connection
     1. Name: <nome da conexão>
