@@ -32,7 +32,7 @@ MongoDB
 
 ## Atlas (Cloud)
 
-1. https://www.mongodb.com/cloud/atlas/register
+1. https://www.mongodb.<colecao>.com/cloud/atlas/register
 1. Sign up with google
 1. Projects > new project > create project
 1. Database > build a database > free Shared > Google Cloud (SP) > Cluster Name > Create Cluster
@@ -48,27 +48,27 @@ MongoDB
 
 # Apresentar
 
-- show dbs: Apresenta todas as coleções existentes no servidor
+- show dbs: Apresenta todas as bases de dados existentes no servidor
 - use <database>: Cria um novo banco de dados e aponta a conexão para ele. Porém, só o armazena efetivamente se houver dados dentro dele.
 
 ---
 
 # Criar (CREATE)
 
+- db.createCollection("<colecao>"): Criação uma coleção no BD Selecionado
 - db.getCollectionNames(): retorna o nome de todas as coleções da base
-- db.createCollection(<colecao>): Criação uma coleção no BD Selecionado
 
 ---
 
 # Apagar (DROP)
 
 - db.dropDatabase(): Apaga a base selecionada.
-- db.<colecao>.drop(): Apaga uma determinada coleção da base selecionada.
+- db.drop("<colecao>"): Apaga uma determinada coleção da base selecionada.
 
 ---
 
 # Inserir (INSERT)
-- db.<colecao>.save(<registro>): Insere documento dentro de uma coleção no MongoDB
+- db.<colecao>.insertOne(<registro>): Insere documento dentro de uma coleção no MongoDB
 - db.<colecao>.insertMany([<registro>, <registro>,...]): Insere vários documentos em uma única coleção
 
 ---
@@ -84,8 +84,20 @@ MongoDB
 # Atualizar (UPDATE)
 
 ```mongodb
-db.<colecao>.update(
-    <consulta>,
+db.<colecao>.updateOne(
+    <condição>,
+    {$set:
+        {"<campo1>":<valor1>},
+        {"<campo2>":<valor2>},
+        ...
+    }
+)
+```
+ou
+
+```mongodb
+db.<colecao>.updateOne(
+    <condição>,
     {$set:
         {"<campo1>":<valor1>},
         {"<campo2>":<valor2>},
@@ -99,13 +111,15 @@ db.<colecao>.update(
 # Deletar (DELETE)
 
 ```mongodb
-db.<colecao>.delete("<objectId>")
+db.<colecao>.deleteOne("<objectId>")
+db.<colecao>.deleteMany("<objectId>")
 ```
 
 ou 
 
 ```mongodb
-db.<colecao>.delete(<consulta>)
+db.<colecao>.deleteOne(<condição>)
+db.<colecao>.deleteMany(<condição>)
 ```
 
 ---
@@ -138,8 +152,10 @@ db.<colecao>.find({"<campo>": {<operador>: "<valor>"}}):   Resgata documentos da
 - AND
 ```mongodb
 db.<colecao>.find({
-    "<campo1>":<operador1>,
-    "<campo2>":<operador2>
+    $and:[
+        "<campo1>":<operador1>,
+        "<campo2>":<operador2>
+    ]
 })
 ```
 
@@ -158,21 +174,31 @@ db.<colecao>.find({
 
 # Pesquisa Textual
 
-db.<colecao>.createIndex({<campo>: "<tipo_index>"}): criar um índice de texto no campo que se deseja realizar a busca textual.
+db.<colecao>.createIndex({"<campo>": "<tipo_index>"}): criar um índice de texto no campo que se deseja realizar a busca textual.
 db.<colecao>.find({\$text:{$search: "<termo>"}}):Realiza busca em todos os documentos que possuírem o termo buscado.
 
 ---
 
-# Ordenação
+# Pesquisa Textual
+
+```
+db.<colecao>.createIndex({"<campo>": "<tipo_index>"})
+
+db.<colecao>.find({$text:{$search: "<termo>"}})
+```
+
+---
+
+# Ordenação (ORDER BY)
 
 ```mongodb
-<consulta>.sort({<coluna>: 1})
+<consulta>.sort({"<coluna>": 1})
 ```
 
 ou
 
 ```mongodb
-<consulta>.sort({<coluna>: -1})
+<consulta>.sort({"<coluna>": -1})
 ```
 
 ---
