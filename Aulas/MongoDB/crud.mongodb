@@ -1,0 +1,263 @@
+/* Create */
+db.alunos.insertMany([
+  {
+    "Nome": "Anderson",
+    "Idade": 40,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.9,
+    "Formação": "Superior Incompleto (ADS)"
+  },
+  {
+    "Nome": "Ettore Mitsueda",
+    "Idade": 29,
+    "Filhos": 2,
+    "Estado": "SP",
+    "Altura": 1.72,
+    "Formação": "Ensino Médio Completo"
+  },
+  {
+    "Nome": "Bruna",
+    "Idade": 28,
+    "Filhos": 0,
+    "Estado": "MG",
+    "Altura": 1.62,
+    "Formação": "Superior completo"
+  },
+  {
+    "Nome": "clara",
+    "Idade": 19,
+    "Filhos": 0,
+    "Estado": "RJ",
+    "Altura": 1.63,
+    "Formação": "superior incompleto (ADS)"
+  },
+  {
+    "Nome": "João Paulo",
+    "Idade": 27,
+    "Filhos": 0,
+    "Estado": "DF",
+    "Altura": 1.5,
+    "Formação": "Superior completo"
+  },
+  {
+    "Nome": "Fernando A",
+    "Idade": 32,
+    "Filhos": 1,
+    "Estado": "SP",
+    "Altura": 1.74,
+    "Formação": "Mestrado completo/Doutorado incompleto"
+  },
+  {
+    "Nome": "José Vitor",
+    "Idade": 24,
+    "Filhos": 0,
+    "Estado": "PB",
+    "Altura": 1.78,
+    "Formação": "superior incompleto"
+  },
+  {
+    "Nome": "Raissa",
+    "Idade": 32,
+    "Filhos": 2,
+    "Estado": "GO",
+    "Altura": 1.68,
+    "Formação": "Superior"
+  },
+  {
+    "Nome": "George",
+    "Idade": 38,
+    "Filhos": 0,
+    "Estado": "CE",
+    "Altura": 1.8,
+    "Formação": "Superior"
+  },
+  {
+    "Nome": "Bruno Coelho",
+    "Idade": 30,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.7,
+    "Formação": "Superior"
+  },
+  {
+    "Nome": "Fernando Oliveira",
+    "Idade": 41,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.79,
+    "Formação": "Superior"
+  },
+  {
+    "Nome": "Edson",
+    "Idade": 26,
+    "Filhos": 0,
+    "Estado": "PR",
+    "Altura": 1.8,
+    "Formação": "Superior Incompleto"
+  },
+  {
+    "Nome": "Eron",
+    "Idade": 32,
+    "Filhos": 1,
+    "Estado": "SP",
+    "Altura": 1.76,
+    "Formação": "Ensino Médio Completo"
+  },
+  {
+    "Nome": "Fernando",
+    "Idade": 23,
+    "Filhos": 0,
+    "Estado": "RN",
+    "Altura": 1.7,
+    "Formação": "Ensino Médio"
+  },
+  {
+    "Nome": "Wagner",
+    "Idade": 30,
+    "Filhos": 0,
+    "Estado": "CE",
+    "Altura": 2,
+    "Formação": "Superior Completo"
+  },
+  {
+    "Nome": "Gabrielle",
+    "Idade": 25,
+    "Filhos": 0,
+    "Estado": "RJ",
+    "Altura": 1.56,
+    "Formação": "Superior Completo"
+  },
+  {
+    "Nome": "Larissa",
+    "Idade": 28,
+    "Filhos": 0,
+    "Estado": "RJ",
+    "Altura": 1.74,
+    "Formação": "Ensino Superior Completo"
+  },
+  {
+    "Nome": "Câmara",
+    "Idade": 58,
+    "Filhos": 1,
+    "Estado": "RJ",
+    "Altura": 1.8,
+    "Formação": "Superior Completo"
+  },
+  {
+    "Nome": "William Ferrari",
+    "Idade": 40,
+    "Filhos": 3,
+    "Estado": "SP",
+    "Altura": 1.73,
+    "Formação": "Superior incompleto"
+  },
+  {
+    "Nome": "Erick",
+    "Idade": 26,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.7,
+    "Formação": "Ensino Superior Completo"
+  },
+  {
+    "Nome": "lucas",
+    "Idade": 26,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.7,
+    "Formação": "superior"
+  },
+  {
+    "Nome": "Willian Caetano",
+    "Idade": 37,
+    "Filhos": 1,
+    "Estado": "pa",
+    "Altura": 1.75,
+    "Formação": "superior"
+  },
+  {
+    "Nome": "Divino",
+    "Idade": 24,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.69,
+    "Formação": "Superior"
+  },
+  {
+    "Nome": "Natalia",
+    "Idade": 25,
+    "Filhos": 0,
+    "Estado": "SSA",
+    "Altura": 1.59,
+    "Formação": "Ensino Médio Completo"
+  },
+  {
+    "Nome": "julia",
+    "Idade": 30,
+    "Filhos": 0,
+    "Estado": "pa",
+    "Altura": 1.59,
+    "Formação": "superior completo"
+  },
+  {
+    "Nome": "Gabriel Silva",
+    "Idade": 27,
+    "Filhos": 0,
+    "Estado": "SP",
+    "Altura": 1.8,
+    "Formação": "superior incompleto"
+  },
+  {
+    "Nome": "Bruno Fernandes",
+    "Idade": 25,
+    "Filhos": 0,
+    "Estado": "SC",
+    "Altura": 1.9,
+    "Formação": "Superior incompleto"
+  },
+  {
+    "Nome": "Josivaldo",
+    "Idade": 35,
+    "Filhos": 8,
+    "Estado": "SP",
+    "Altura": 1.8,
+    "Formação": "Ensino medio Completo"
+  },
+  {
+    "Nome": "BRUNO LIMA",
+    "Idade": 32,
+    "Filhos": 0,
+    "Estado": "pr",
+    "Altura": 1.8,
+    "Formação": "Pós graduado"
+  },
+  {
+    "Nome": "Sandro Santos Marra",
+    "Idade": 38,
+    "Filhos": 0,
+    "Estado": "DF",
+    "Altura": 1.83,
+    "Formação": "Ensino Superior Inc"
+  },
+  {
+    "Nome": "Gabriel Queiroz",
+    "Idade": 23,
+    "Filhos": 0,
+    "Estado": "MG",
+    "Altura": 1.78,
+    "Formação": "Superior Completo"
+  }
+]);
+
+/* Read */
+db.alunos.find({"Nome":"Fernando Alberto"});
+
+/* Update */
+db.alunos.updateOne(
+  {"Nome":"Fernando"},
+  {$set:{"Filhos": 1}}
+);
+
+/* Delete */
+db.alunos.deleteOne({"Nome":"Fernando"});

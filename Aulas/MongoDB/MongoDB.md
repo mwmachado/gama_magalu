@@ -191,17 +191,17 @@ db.<colecao>.find({$text:{$search: "<termo>"}})
 
 # Ordenação (ORDER BY)
 
+Ordem crescente
 ```mongodb
 <consulta>.sort({"<coluna>": 1})
 ```
 
 ou
 
+Ordem decrescente
 ```mongodb
 <consulta>.sort({"<coluna>": -1})
 ```
-
----
 
 ---
 
