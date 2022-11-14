@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <form action="/create" method="get"> <!-- ?chave=valor,chave=valor,...-->
+        <fieldset>
+            <legend>Cadastro de Alunos</legend>
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+            <br>
+            
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" min="0" max="100" step="1" required>
+            <br>
+            
+            <label for="filhos">Filhos</label>
+            <input type="number" id="filhos" name="filhos" min="0" max="100" step="1" required>
+            <br>
+            
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                <option value="EX">Estrangeiro</option>
+            </select>
+            <br>
+            
+            <label for="altura">Altura</label>
+            <input type="number" id="altura" name="altura" min="0" max="3" step="0.01" required>
+            <br>
+            
+            <label for="formacao">Formacao</label>
+            <select id="formacao" name="formacao">
+                <option value="Ensino Fundamental">Ensino Fundamental</option>
+                <option value="Ensino Medio">Ensino Medio</option>
+                <option value="Ensino Superior">Ensino Superior</option>
+                <option value="Pos Graduação">Pos Graduação</option>
+            </select>
+            <br>
+
+            <input type="submit" value="Cadastrar" required>
+        </fieldset>
+    </form>
+</body>
+</html>
