@@ -91,7 +91,7 @@ def delete_all():
 #?nome=teste&idade=0&filhos=1&estado=AC&altura=0.07&formacao=Ensino+Superior
 def update_name(nome):
     consulta = read_name(nome)
-    if consulta:
+    if consulta: # existe nome no banco de dados
         aluno=request.args.to_dict() #{chave: valor, chave:valor,...}
         if aluno: # se tem argumento
             conexao, cursor = abrir_conexao(banco)
@@ -100,7 +100,7 @@ def update_name(nome):
             return aluno
         else: # se não tem argumento
             return render_template('atualizacao.html', aluno=consulta[0])
-    else:
+    else: # não existe nome no banco de dados
         return {'error': 'Aluno não encontrado!'}
 
 
