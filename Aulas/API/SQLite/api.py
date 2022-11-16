@@ -17,10 +17,11 @@ def fechar_conexao(conexao):
 # Comandos SQL
 contagem = "SELECT COUNT(*) FROM alunos;"
 select_todos = "SELECT * FROM alunos;"
-select_nome = "SELECT * FROM alunos WHERE nome like ?"
-insert = "INSERT INTO alunos VALUES (:nome,:idade,:filhos,:estado,:altura,:formacao)"
 truncate = "DELETE FROM alunos;" #"TRUNCATE TABLE alunos;"
+
+select_nome = "SELECT * FROM alunos WHERE nome like ?"
 delete_nome = "DELETE FROM alunos WHERE nome like ?"
+insert = "INSERT INTO alunos VALUES (:nome,:idade,:filhos,:estado,:altura,:formacao)"
 update = '''
 UPDATE alunos SET
     nome = :nome,
@@ -31,7 +32,6 @@ UPDATE alunos SET
     formacao = :formacao
 WHERE nome like :nome  
 '''
-
 
 # index
 @app.route('/')

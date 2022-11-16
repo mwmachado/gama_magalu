@@ -5,7 +5,7 @@ conexao = sql.connect('projeto.db')
 # Cursor e Executando Comandos
 cursor = conexao.cursor()
 # ## Criar tabela
-cursor.execute('''DROP TABLE alunos;''')
+cursor.execute('''DROP TABLE IF EXISTS alunos;''')
 cursor.execute('''
 CREATE TABLE alunos(
     nome text,
@@ -23,6 +23,11 @@ cursor.execute('''
     FROM sqlite_master
     WHERE type='table';
 ''')
+
+# cursor.fetchone -> 1 registro no formato de tupla
+# cursor.fetchmany(n) -> n registros em formato de tupla dentro de uma lista
+# cursor.fetchall() -> todos registros em formato de tupla dentro de uma lista
+
 print(cursor.fetchall())
 
 ## Inserir dados
@@ -60,12 +65,12 @@ INSERT INTO alunos VALUES
     ('Sandro Santos Marra',38,0,'DF',1.83,'Ensino Superior Inc'),
     ('Gabriel Queiroz',23,0,'MG',1.78,'Superior Completo')
 ;''')
+# cursor.execute("select count(*) from alunos;")
+# print(cursor.fetchall())
+# conexao.rollback() # Descarta as alterações
 conexao.commit() # Salva as alterações no banco de dados
 cursor.execute("select count(*) from alunos;")
 print(cursor.fetchall())
-# conexao.rollback() # Descarta as alterações
-# cursor.execute("select count(*) from alunos;")
-# print(cursor.fetchall())
 
 # ## Consultar dados
 # cursor.execute('''
@@ -82,6 +87,12 @@ print(cursor.fetchall())
 #     ('Ana',23,0,'MG',1.78,'Superior Completo')
 # ]
 
+# # Evita o SQLInjection
+# cursor.executemany('''
+# INSERT INTO alunos VALUES
+# (?,?,?,?,?,?)
+# ''', data)
+
 # '''
 # INSERT INTO alunos VALUES
 # ('Matheus',23,0,'MG',1.78,'Superior Completo')
@@ -90,12 +101,6 @@ print(cursor.fetchall())
 # INSERT INTO alunos VALUES
 # ('Ana',23,0,'MG',1.78,'Superior Completo')
 # '''
-
-# # Evita o SQLInjection
-# cursor.executemany(f'''
-# INSERT INTO alunos VALUES
-# (?,?,?,?,?,?)
-# ''', data)
 
 # data = [
 #     {
