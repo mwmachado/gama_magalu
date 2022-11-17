@@ -8,7 +8,8 @@ def index():
     print(request.method)
     print(request.args.to_dict())
     # print(request.json)
-    if request.data:
+    #if request.data:
+    if request.get_json(silent=True):
         print(request.json)
     return {"message":"olá"}, 201
 
