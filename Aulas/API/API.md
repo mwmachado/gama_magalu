@@ -15,8 +15,8 @@ marp: true
 - Cliente (Client, request)
 - Garçon (API, response)
 - Cozinha (back-end)
-- Prato (front-end)
 - Comida (recurso)
+- Prato (front-end)
 
 ---
 
@@ -95,10 +95,10 @@ marp: true
 
 - Antigamente utilizava-se XML, porém hoje o padrão é JSON.
 - Utilize verbos HTTP corretos nas requisições.
+- Nomeie os pontos de acessos com substantivos em vez de verbo.
 - Decida se os pontos de acesso serão escritos no plural ou singular, e mantenha o padrão.
 - Sempre envie uma resposta para o cliente (JSON).
 - Sempre envie status HTTPs no retorno da requisição.
-- Nomeie os pontos de acessos com substantivos em vez de verbo.
 
 ---
 
