@@ -18,6 +18,7 @@ def fechar_conexao(conexao):
     conexao.close()
 
 # Comandos SQL
+colunas = ['filhos', 'formacao', 'altura', 'idade', 'estado', 'nome']
 insert = '''
 INSERT INTO alunos VALUES
 (null, %(nome)s,%(idade)s,%(filhos)s,%(estado)s,%(altura)s,%(formacao)s)
@@ -25,6 +26,25 @@ INSERT INTO alunos VALUES
 '''
 select_all = "SELECT * FROM alunos;"
 select_by_id = "SELECT * FROM alunos WHERE id = %s;"
+select_by_nome = "SELECT * FROM alunos WHERE nome = %s;"
+delete_by_id = "DELETE FROM alunos WHERE id = %s;"
+update = '''
+UPDATE alunos SET
+    nome = %(nome)s
+    idade = %(idade)s
+    filhos = %(filhos)s
+    estado = %(estado)s
+    altura = %(altura)s
+    formacao = %(formacao)s
+where id = %(id)s;
+'''
+
+
+# Erros
+aluno_ausente = {'erro': "Aluno não encontrado"}, 404
+coluna_ausente = {'erro': "Há coluna(s) faltando"}, 404
+json_ausente = {'erro': 'Esperava receber um json no corpo da requisição'}, 400
+
 
 # Rotas
 @app.route('/cadastro', methods=['POST'])
@@ -36,7 +56,7 @@ def cadastrar():
         fechar_conexao(conexao)
         return aluno, 201
     else:
-        return {'erro': 'Esperava receber um json no corpo da requisição'}, 400
+        return json_ausente
 
 @app.route('/consulta')
 def consultar():
@@ -44,7 +64,7 @@ def consultar():
     cursor.execute(select_all)
     resultado = cursor.fetchall()
     fechar_conexao(conexao)
-    return resultado
+    return resultado, 200
 
 @app.route('/consulta/<int:id>')
 def consultar_id(id):
@@ -53,14 +73,52 @@ def consultar_id(id):
     resultado = cursor.fetchone()
     fechar_conexao(conexao)
     if resultado:
-        return resultado
+        return resultado, 200
     else:
-        return {'erro': "Aluno não encontrado"}, 404
+        return aluno_ausente
 
-'''
-   1. Retornar apenas um item pelo nome [POST] {"nome": "nome do item"}
-   1. Atualizar um item pelo id [PUT] {"nome": "novo_nome", ...}
-   1. Deletar um item pelo id [DELETE <id>]
-'''
+@app.route('/consulta', methods=['POST'])
+def consultar_nome():
+    if request.get_json(silent=True):
+        nome = request.json['nome']
+        conexao, cursor = abrir_conexao(True)
+        cursor.execute(select_by_nome, [nome])
+        resultado = cursor.fetchall()
+        fechar_conexao(conexao)
+        if resultado:
+            return {'resultado': resultado}, 200
+        else:
+            return aluno_ausente
+    else:
+        return json_ausente
+
+@app.route('/atualizacao/<int:id>', methods=['PUT'])
+def atualiza(id):
+    resultado, status = consultar_id(id)
+    if status == 200: #aluno está na base
+        if request.get_json(silent=True):
+            aluno = request.json
+            if set(colunas) - set(alunos.keys()):
+                return coluna_ausente
+            conexao, cursor = abrir_conexao()
+            cursor.execute(update, [aluno])
+            fechar_conexao(conexao)
+        else:
+            return json_ausente
+    else:
+        return aluno_ausente
+
+@app.route('/delecao/<int:id>', methods=['DELETE'])
+def deleta(id):
+    resultado, status = consultar_id(id)
+    if status == 200: #aluno está na base
+        conexao, cursor = abrir_conexao()
+        cursor.execute(delete_by_id, [id])
+        resultado = cursor.rowcount
+        fechar_conexao(conexao)
+        return {'message': f'{resultado} aluno(s) foram removido(s)!'}, 200
+    else:
+        return aluno_ausente
+
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
