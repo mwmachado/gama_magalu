@@ -30,11 +30,11 @@ select_by_nome = "SELECT * FROM alunos WHERE nome = %s;"
 delete_by_id = "DELETE FROM alunos WHERE id = %s;"
 update = '''
 UPDATE alunos SET
-    nome = %(nome)s
-    idade = %(idade)s
-    filhos = %(filhos)s
-    estado = %(estado)s
-    altura = %(altura)s
+    nome = %(nome)s,
+    idade = %(idade)s,
+    filhos = %(filhos)s,
+    estado = %(estado)s,
+    altura = %(altura)s,
     formacao = %(formacao)s
 where id = %(id)s;
 '''
