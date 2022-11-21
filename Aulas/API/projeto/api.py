@@ -7,8 +7,8 @@ def abrir_conexao(dicionario=False):
     conexao = sql.connect(
         host="127.0.0.1",
         user="root",
-        password="gama1234",
-        database="gama"
+        password="root",
+        database="gamma"
     )
     cursor = conexao.cursor(dictionary=dicionario)
     return conexao, cursor
@@ -98,7 +98,7 @@ def atualiza(id):
     if status == 200: #aluno está na base
         if request.get_json(silent=True):
             aluno = request.json
-            if set(colunas) - set(alunos.keys()):
+            if set(colunas) - set(aluno.keys()):
                 return coluna_ausente
             conexao, cursor = abrir_conexao()
             cursor.execute(update, [aluno])
