@@ -7,8 +7,8 @@ def abrir_conexao(dicionario=False):
     conexao = sql.connect(
         host="127.0.0.1",
         user="root",
-        password="gama1234",
-        database="gama"
+        password="root",
+        database="gamma"
     )
     cursor = conexao.cursor(dictionary=dicionario)
     return conexao, cursor
