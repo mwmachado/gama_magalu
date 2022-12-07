@@ -3,4 +3,5 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 *.csv
-*.bd
+*.db
+*.pytest_cache
