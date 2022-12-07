@@ -1,14 +1,22 @@
 from flask import Flask, request
 import mysql.connector as sql
+
+# Aplicação
 app = Flask(__name__)
 
 # Conexão com Banco de Dados
 def abrir_conexao(dicionario=False):
+    '''
+    Args:
+    
+    Returns:
+
+    '''
     conexao = sql.connect(
         host="127.0.0.1",
         user="root",
-        password="root",
-        database="gamma"
+        password="gama1234",
+        database="gama"
     )
     cursor = conexao.cursor(dictionary=dicionario)
     return conexao, cursor
@@ -44,9 +52,14 @@ coluna_ausente = {'erro': "Há coluna(s) faltando"}, 404
 json_ausente = {'erro': 'Esperava receber um json no corpo da requisição'}, 400
 
 # Rotas
+@app.route('/')
+def index():
+    return 'olá'
 ## Create
 @app.route('/cadastro', methods=['POST'])
 def cadastrar():
+    '''
+    '''
     if request.get_json(silent=True):
         aluno = request.json
         conexao, cursor = abrir_conexao()
@@ -59,6 +72,15 @@ def cadastrar():
 ## Read
 @app.route('/consulta')
 def consultar():
+    '''Description:
+    Methods:
+    Arguments:
+    Responses:
+        Code: Message
+    Examples:
+        Request:
+        Response:
+    '''
     conexao, cursor = abrir_conexao(True)
     cursor.execute(select_all)
     resultado = cursor.fetchall()
@@ -67,6 +89,8 @@ def consultar():
 
 @app.route('/consulta/<int:id>')
 def consultar_id(id):
+    '''
+    '''
     conexao, cursor = abrir_conexao(True)
     cursor.execute(select_by_id, [id])
     resultado = cursor.fetchone()
@@ -78,6 +102,8 @@ def consultar_id(id):
 
 @app.route('/consulta', methods=['POST'])
 def consultar_nome():
+    '''
+    '''
     if request.get_json(silent=True):
         nome = request.json['nome']
         conexao, cursor = abrir_conexao(True)
@@ -94,6 +120,8 @@ def consultar_nome():
 ## Update
 @app.route('/atualizacao/<int:id>', methods=['PUT'])
 def atualiza(id):
+    '''
+    '''
     resultado, status = consultar_id(id)
     if status == 200: #aluno está na base
         if request.get_json(silent=True):
@@ -113,6 +141,8 @@ def atualiza(id):
 ## Delete
 @app.route('/delecao/<int:id>', methods=['DELETE'])
 def deleta(id):
+    '''
+    '''
     resultado, status = consultar_id(id)
     if status == 200: #aluno está na base
         conexao, cursor = abrir_conexao()
@@ -123,6 +153,5 @@ def deleta(id):
     else:
         return aluno_ausente
 
-# Main
 if __name__ == "__main__":
     app.run(debug=True, port=8000)

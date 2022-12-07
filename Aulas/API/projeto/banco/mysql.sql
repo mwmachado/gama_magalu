@@ -1,4 +1,4 @@
--- Active: 1667845254722@@127.0.0.1@3306@gama
+-- Active: 1669074719164@@127.0.0.1@3306@gama
 CREATE DATABASE IF NOT EXISTS gama;
 USE gama;
 DROP TABLE IF EXISTS alunos;
@@ -11,7 +11,6 @@ CREATE TABLE alunos(
   altura DECIMAL(3,2) NOT NULL,
   formacao VARCHAR(100)
 );
-
 INSERT INTO alunos(nome, idade, filhos, estado, altura, formacao) VALUES
 ('Anderson',40,0,'SP',1.9,'Superior Incompleto (ADS)'),
 ('Ettore Mitsueda',29,2,'SP',1.72,'Ensino Médio Completo'),
@@ -44,5 +43,4 @@ INSERT INTO alunos(nome, idade, filhos, estado, altura, formacao) VALUES
 ('BRUNO LIMA',32,0,'pr',1.8,'Pós graduado'),
 ('Sandro Santos Marra',38,0,'DF',1.83,'Ensino Superior Inc'),
 ('Gabriel Queiroz',23,0,'MG',1.78,'Superior Completo');
-
 SELECT * FROM alunos;

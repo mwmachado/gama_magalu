@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 Documentação e Testes
 ===
 
@@ -6,7 +10,6 @@ Documentação
 
 Docstrings
 ---
-
 
 Flask-autodoc
 ---
@@ -109,7 +112,8 @@ def doc_privado():
 
 ---
 
-Testes
+## Testes
+
 ---
 
 - Testes são considerados boas práticas no desenvolvimento de software.
@@ -118,8 +122,10 @@ Testes
 - Testes são um bom indicador de qualidade de software.
 - Códigos Testáveis são um bom indicador de qualidade de arquitetura de software.
 
+---
 
-Benefícios
+## Benefícios
+
 ---
 
 - **Mais robustos:** testes ajudam a evitar bugs no aplicativo
@@ -129,45 +135,59 @@ Benefícios
 - **Confiança:** testes podem mostrar quais versões do código funcionam e quais não funcionam.
 - **Liberdade para experimentação:** com testes fica mais seguro experimentar novas funcionalidades e ver se elas estão interferindo em alguma outra funcionalidade já testada.
 
-Tipos
+---
+
+## Tipos
+
 ---
 
 - Existem 3 tipos de testes: Unitário, teste de integração, teste fim-a-fim.
-- Teste Unitários: Testam um funcionalidade (unit) ou parte pequena do programa de maneira isolada.
-- Teste de integração: Testam partes grandes do programa, geralmente composto por de várias unidades.
-- Teste fim-a-fim: Testa o funcionamento do programa como um todo, geralmente utilizando automatização de clicks e teclados (RPA).
+- **Teste Unitários:** Testam um funcionalidade (unit) ou parte pequena do programa de maneira isolada.
+- **Teste de integração:** Testam partes grandes do programa, geralmente composto por de várias unidades.
+- **Teste fim-a-fim:** Testa o funcionamento do programa como um todo, geralmente utilizando automatização de clicks e teclados (RPA).
 - Para essa aula focaremos nos testes de unidades.
+
+---
+
 ![piramide de testes](https://global-uploads.webflow.com/619e15d781b21202de206fb5/628b0dca3e6eda9219d40a6a_The-Testing-Pyramid-Simplified-for-One-and-All-1280X720%20(1).jpg)
 
-Testes Unitários
+---
+
+## Testes Unitários
+
 ---
 
 - Testes unitários utilizam uma abordagem mais simplistas, focando em testar apenas uma funcionalidade por teste em vez de testar o programa todo de uma vez.
 - É uma abordagem otimista e com certeza não vai livrar nossos programas de bugs.
 - Porém funciona muito bem para garantir que cada funcionalidade está performando conforme esperado mesmo que de maneira isolada.
 
+---
 
-Flask
+## Flask
+
 ---
 
 - flask provê recursos para testar as aplicações.
 - O framework utiliza a biblioteca pytest.
-- Testes geralmente ficam localizados na pasta "tests"
 - Os testes geralmente são funções que começam com o prefixo "test_" em módulos python que com o prefixo "test_"
 - Em linhas gerais, tente testar as funções que você escreve e não as bibliotecas que você utiliza, já que geralmente elas já possuem seus próprios testes.
 
-Pytest
+---
+
+## Pytest
+
 ---
 
 - Pytest fixtures permite a escrita de código reutilizável entre os testes.
 - fixtures transformam um app Flask em um objeto python, onde é possível rodar testes.
 - fixtures podem retornar valores e realizar configurações (setup).
-- Recomenda-se começar os teste criando um fixture para:
-  - app: 
-  - cliente: 
+- Recomenda-se começar os teste criando um fixture para o app em modo teste.
 ![exemplo de código](https://flask.palletsprojects.com/en/2.2.x/testing/#fixtures)
 
-Requisições
+---
+
+## Requisições
+
 ---
 
 - Geralmente utilizamos a biblioteca "requests" para testar as rotas da aplicação
@@ -178,10 +198,13 @@ Requisições
 - É possível passar parâmetros para a requisição utilizando o argumento "query_string={...}"
 - É possível passar dados de formulário utilizando o argumento "data={...}"
 - É possível passar json no corpo da requisição utilizando o argumento "json={...}".
+
 ![exemplo de teste de requisição](https://flask.palletsprojects.com/en/2.2.x/testing/#sending-requests-with-the-test-client)
 
+---
 
-Redirecionamentos
+## Redirecionamentos
+
 ---
 
 - Por padrão, o cliente não segue redirecionamentos.
@@ -190,11 +213,14 @@ Redirecionamentos
 - Cada reposta tem um atributo request que contém as informações de cadas pedido utilizado.
 ![exemplo de teste de redirecionamento](https://flask.palletsprojects.com/en/2.2.x/testing/#following-redirects)
 
-Dicas
+---
+
+## Dicas
+
 ---
 
 - assert response.status_code == 200
-- assert response.data == html
+- assert response.text == html
 - assert html in request.data.decode()
 - assert response.args.to_dict() == form_get
 - assert response.form == form_json
@@ -202,30 +228,42 @@ Dicas
 - assert len(response.history) = n_redirects
 - assert len(response.request.path) = last_redirect
 
+---
+
 - Rotas
-  - Status 200 para todas as rotas
-	- Status 405 para métodos não permitidos
+	- Status de sucesso para todas as rotas (200,201,202)
+	- Status de falha para todas as rotas (400,404,405)
 	- Quantidade de redirecionamentos
 	- Caminho do último redirecionamento
 	- Conteúdo
+
+---
+
 - Formulários
   - Dados de fomulários via GET
   - Dados de formulários via POST
+
+---
+
 - APIs
   - Status HTTP
   - Corpo do response
-	- Tipos de dados inválidos
+  - Tipos de dados inválidos
+---
+
 - Banco de dados
-  - Teste de conexão
+	- Teste de conexão
 	- Teste de cursor
-	- Criação de base de testes
 	- Existência de tabelas
 	- Inserção de dados
 	- Consulta de dados
 	- Atualização de dados
 	- Deleção de dados
 
-Rodando testes
+---
+
+## Rodando testes
+
 ---
 
 - Pytest idenfica nossos testes procurando por arquivos e funções com o prefixo test.
@@ -233,18 +271,25 @@ Rodando testes
 - A estrutura assert vai testar uma expressão que retorna verdadeiro ou falso.
 - Caso todos os asserts retornem verdadeiro, o teste passa com sucesso.
 - Caso algum assert retorne falso, o teste inteiro falha
+
+---
+
 - Para rodar o pytest na pasta do projeto (e não na pasta teste) basta rodar o comando "python -m pytest"
 - Rodar o pytest na pasta do projeto evita que apareçam erros caso o pytest não encontre algum objeto que precise para rodar os testes.
 - Para rodar o teste com mais detalhes pode-se utilizar o comando "python -m pytest -v"
 - É possível rodar apenas os testes que não rodaram na última vez, basta utilizar o comando "python -m pytest --last-failed"
 
+---
 
-Referências
+## Referências
+
 ---
 
 - https://flask.palletsprojects.com/en/2.2.x/testing/
 - https://codethechange.stanford.edu/guides/guide_flask_unit_testing.html
+- https://peps.python.org/pep-0257
 
+<!--
 ???
 ---
 
@@ -256,3 +301,4 @@ Referências
 	- WHEN: what is ocurring that needs to be tested?
 	- THEN: what is the expected response?
 	- reference: martin flower
+-->
