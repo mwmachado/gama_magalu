@@ -1,7 +1,14 @@
--- Active: 1667845254722@@127.0.0.1@3306@gama
-CREATE DATABASE IF NOT EXISTS gama;
-USE gama;
-DROP TABLE IF EXISTS alunos;
+import mysql.connector as sql
+conexao = sql.connect(
+        host="127.0.0.1",
+        user="root",
+        password="gama1234"
+)
+cursor = conexao.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS gama;")
+cursor.execute("USE gama;")
+cursor.execute("DROP TABLE IF EXISTS alunos;")
+cursor.execute('''
 CREATE TABLE alunos(
   id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
@@ -10,8 +17,8 @@ CREATE TABLE alunos(
   estado VARCHAR(3) NOT NULL,
   altura DECIMAL(3,2) NOT NULL,
   formacao VARCHAR(100)
-);
-
+);''')
+cursor.execute('''
 INSERT INTO alunos(nome, idade, filhos, estado, altura, formacao) VALUES
 ('Anderson',40,0,'SP',1.9,'Superior Incompleto (ADS)'),
 ('Ettore Mitsueda',29,2,'SP',1.72,'Ensino Médio Completo'),
@@ -44,5 +51,8 @@ INSERT INTO alunos(nome, idade, filhos, estado, altura, formacao) VALUES
 ('BRUNO LIMA',32,0,'pr',1.8,'Pós graduado'),
 ('Sandro Santos Marra',38,0,'DF',1.83,'Ensino Superior Inc'),
 ('Gabriel Queiroz',23,0,'MG',1.78,'Superior Completo');
+''')
+conexao.commit()
+cursor.execute('SELECT count(*) FROM alunos;')
 
-SELECT * FROM alunos;
+print(cursor.fetchall())
