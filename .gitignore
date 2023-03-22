@@ -5,3 +5,4 @@ __pycache__/
 *.csv
 *.db
 *.pytest_cache
+*.bd
